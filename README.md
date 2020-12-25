@@ -20,25 +20,25 @@ A MVC Node.js project for creating personality questionnaires that can be sent t
 
 ## Configure app
 1. Create a `nodemon.json` file:
-```powershell
-New-Item -Name nodemon.json -ItemType File
-```
+    ```powershell
+    New-Item -Name nodemon.json -ItemType File
+    ```
 
 2. open `nodemon.json` and paste:
-```json
-{
-    "env":{
-        "MONGODB_URI": "<MONGODB_URI>",
-        "clientSecret":"<clientSecret>",
-        "clientID":"<clientID>",
-        "googleCallbackURL": "http://localhost:3000/google/callback"
+    ```json
+    {
+        "env":{
+            "MONGODB_URI": "<MONGODB_URI>",
+            "clientSecret":"<clientSecret>",
+            "clientID":"<clientID>",
+            "googleCallbackURL": "http://localhost:3000/google/callback"
+        }
     }
-}
-```
+    ```
 3. replace:
-- `<MONGODB_URI>` => your mongoDB uri
-- `<clientSecret>` => your google credentials "clientSecret"
-- `<clientID>` => your google credentials "clientID"
+    - `<MONGODB_URI>` => your mongoDB uri
+    - `<clientSecret>` => your google credentials "clientSecret"
+    - `<clientID>` => your google credentials "clientID"
 
 ## Running the project
 
