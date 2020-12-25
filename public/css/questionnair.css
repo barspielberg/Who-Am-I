@@ -1,0 +1,14 @@
+
+
+.question-card ul{
+    padding-right: 1rem;
+}
+
+.question-card li{
+list-style-type: none;
+font-size: 1.2rem;
+}
+
+form .btn{
+    width: 100%;
+}

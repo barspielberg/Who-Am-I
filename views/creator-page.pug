@@ -1,0 +1,38 @@
+extends layouts/main-layout
+
+block styles
+    link(rel="stylesheet", href="/css/creator.css")
+    link(rel="stylesheet", href="/css/message.css")
+
+block scripts
+    script(src="/js/creator.js")
+
+block content
+    h1 השאלונים שלי
+    .mid-screen
+        if(questionnaires.length===0)
+            a(href="/creator/create-new").new-questionnaire-link
+                p אני רואה שעוד לא יצרת שאלון, ליצירת שאלון חדש לחץ כאן
+                button ליצירת השאלון הראשון שלך!
+        else   
+            each questionnaire in questionnaires
+                .display-card
+                    .display-card__head
+                        h2 #{questionnaire.title}
+                        a.btn(onclick=`copyToClipboard("${questionnaire.id}")`) העתק קישור
+                            .clipboard-popup(id=questionnaire.id) הקישור הועתק
+                    h4 #{questionnaire.description}
+                    p מספר שאלות: #{questionnaire.questions.length}
+                    .display-card__buttons
+                        a.btn(href="/quiz/"+questionnaire.id) התחל
+                        //- a.btn(href="/creator/"+questionnaire.id) עריכה
+                        a.btn.del(onclick=`deletequiz("${questionnaire.id}")`) מחיקה
+            a.btn.new-questionnarie(href="/creator/create-new") צור שאלון חדש
+        .backdrop
+            .message
+                h4 האם אתה בטוח שאתה רוצה למחוק את השאלון הזה?
+                form(action="/creator/delete", method="POST").message__buttens
+                    input#id-input(type="hidden", name="quizid")
+                    a.btn(onclick="disappear()") אל תמחק
+                    button.btn.del תמחק
+        

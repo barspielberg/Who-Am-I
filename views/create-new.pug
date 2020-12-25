@@ -1,0 +1,65 @@
+extends layouts/main-layout
+
+block styles
+    link(rel="stylesheet" href="/css/form.css")
+    link(rel="stylesheet" href="/css/message.css")
+
+block scripts
+    script(src="/js/form.js")
+
+block content
+    h1 שאלון חדש
+    form.mid-screen(action="/creator/create-new" method="post" id="form" enctype="multipart/form-data")
+        .question-cards
+            .question-card           
+                label(for="title") כותרת
+                input(type="text" id="title" name="title", required,autocomplete="off" placeholder="לדוגמה: בחן את עצמך, מי אתה יותר..." )
+                textarea(name="des" cols="5" rows="3",autocomplete="off" placeholder="כתוב כאן תיאור כללי לשאלון")
+                .question-card__options
+                    .question-card__option
+                        img(src="/img/icons8-plus.svg" alt="img" id="op-1-img")
+                        input(type="file", name="op1img", id="op-1-img-input", accept="image/png,image/PNG,image/jpeg,image/JPG,image/jpg")
+                        input(type="text" id="op-1" name="op-1", required,autocomplete="off" placeholder="לדוגמה: הומר סימפסון")
+                        textarea(name="op-1-des" cols="5" rows="3",autocomplete="off" placeholder="כתוב כאן תיאור לדמות...")
+
+                    .question-card__option
+                        img(src="/img/icons8-plus.svg" alt="img" id="op-2-img")
+                        input(type="file", name="op2img", id="op-2-img-input", accept="image/png,image/PNG,image/jpeg,image/JPG,image/jpg")
+                        input(type="text" id="op-2" name="op-2", required,autocomplete="off" placeholder="לדוגמה: מארג' סימפסון")
+                        textarea(name="op-2-des" cols="5" rows="3",autocomplete="off" placeholder="כתוב כאן תיאור לדמות...")
+
+                    .question-card__option
+                        img(src="/img/icons8-plus.svg" alt="img" id="op-3-img")
+                        input(type="file", name="op3img", id="op-3-img-input", accept="image/png,image/PNG,image/jpeg,image/JPG,image/jpg")
+                        input(type="text" id="op-3" name="op-3", required,autocomplete="off" placeholder="לדוגמה: בארט סימפסון")
+                        textarea(name="op-3-des" cols="5" rows="3",autocomplete="off" placeholder="כתוב כאן תיאור לדמות...")
+
+                    .question-card__option
+                        img(src="/img/icons8-plus.svg" alt="img" id="op-4-img")
+                        input(type="file", name="op4img", id="op-4-img-input", accept="image/png,image/PNG,image/jpeg,image/JPG,image/jpg")
+                        input(type="text" id="op-4" name="op-4", required,autocomplete="off" placeholder="לדוגמה: ליסה סימפסון")
+                        textarea(name="op-4-des" cols="5" rows="3",autocomplete="off" placeholder="כתוב כאן תיאור לדמות...")
+            .question-card
+                label(for="qu-1") שאלה 1
+                input(type="text" id="qu-1" name="qu-1", required,autocomplete="off" placeholder="לדוגמה: מה העונה האהובה אליך?" )
+                .question-card__answers
+                    input(type="text" id="qu-1-op-1" name="qu-1-op-1" autocomplete="off", required, placeholder="חורף")
+                    input(type="text" id="qu-1-op-2" name="qu-1-op-2" autocomplete="off", required, placeholder="קיץ")
+                    input(type="text" id="qu-1-op-3" name="qu-1-op-3" autocomplete="off", required, placeholder="סתיו")
+                    input(type="text" id="qu-1-op-4" name="qu-1-op-4" autocomplete="off", required, placeholder="אביב")
+        .add-question-btn.btn.disabled הוסף שאלה 
+        button(type="submit").btn.submit סיימתי    
+    .backdrop
+        .message.missing
+            h4 היי נראה שחסרים לך כמה נתונים כדי להמשיך...
+            .message__buttens
+                a.btn(onclick="disappear()") הבנתי     
+        .message.help
+            h4 מאיפה להתחיל?
+            p בחלק הראשון כתוב/י את נושא השאלון ותיאור כללי.
+            p לאחר מכן הכנס/י 4 תוצאות אפשריות לשאלון (יש אופציה להכניס גם תמונות).
+            p אחר כך תוכל/י להוסיף כמה שאלות שרק תרצה/י, כל תשובה מקושרת לתוצאה אפשרית.
+            p לבסוף לחץ/י על "סיימתי".
+            p *שים/י לב שיכולות לקחת כמה שניות להעלות את כל התמונות לסרבר.
+            .message__buttens
+                a.btn(onclick="disappear()") הבנתי     

@@ -1,0 +1,19 @@
+.display-card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.img{
+    max-width: 400px;
+}
+img{
+    width: 100%;
+}
+
+.display-card:first-child{
+    background-color: #57ae8c;
+    color: whitesmoke;
+    box-shadow: 5px 5px 6px hsla(0, 0%, 0%, 0.5);
+    margin-bottom: 3rem;
+}

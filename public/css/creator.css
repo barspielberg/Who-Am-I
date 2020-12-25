@@ -1,0 +1,80 @@
+.display-card {
+  border: 3px solid rgba(87, 174, 140, 1);
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(87, 174, 140, 0.05);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.display-card h2 {
+  margin: 0;
+}
+
+.display-card p {
+  margin: 0.5rem 0;
+}
+
+.display-card a {
+  display: inline-block;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  background-color: white;
+}
+
+.display-card__buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+a.new-questionnarie {
+  display: block;
+  width: 100%;
+}
+
+.btn.del {
+  color: coral;
+  border-color: coral;
+}
+
+.btn.del:hover,
+.btn.del:active {
+  color: white;
+  background-color: coral;
+}
+
+.display-card__head {
+  display: flex;
+  justify-content: space-between;
+}
+.display-card__head > .btn {
+  font-size: 0.8rem;
+}
+
+.clipboard-popup {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  position: absolute;
+  padding: 0.3rem;
+  border-radius: 5px;
+  transform: translate(10px, -23px);
+  opacity: 0;
+}
+
+.clipboard-popup.pressed{
+  animation: popup 1.5s ease-out forwards;
+}
+
+@keyframes popup {
+  0% {
+    transform: translate(10px, -23px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(0px, -33px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-10px, -43px);
+    opacity: 0;
+  }
+}

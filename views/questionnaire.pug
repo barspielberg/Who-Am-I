@@ -1,0 +1,18 @@
+extends layouts/main-layout
+
+block styles
+    link(rel="stylesheet", href="/css/questionnair.css")
+
+block content
+    form(action=questionnaire.id, method="POST")
+        h1 #{title}
+        h3 #{questionnaire.description}
+        each question in questionnaire.questions
+            .question-card
+                h2 #{question.title}
+                ul
+                    each option in question.options
+                        li
+                            input(type="radio", id=option.id, name=question.id, value=option.score, required)
+                            label(for=option.id) #{option.text}
+        button.btn(type="submit") שלח

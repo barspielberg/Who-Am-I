@@ -1,0 +1,20 @@
+extends layouts/main-layout
+
+block styles
+    link(rel="stylesheet", href="/css/creator.css")
+    link(rel="stylesheet", href="/css/answers.css")
+
+block content
+    h1 #{title}
+    .mid-screen
+        each outcome in outcomes
+            .display-card
+                div
+                    h2 #{outcome.title +" - "+ outcome.percentage+"%" }
+                    p #{outcome.description}
+                if outcome.imgUrl
+                    .img
+                        img(src="/"+outcome.imgUrl, alt=outcome.title)
+            
+
+       
