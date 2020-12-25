@@ -41,5 +41,6 @@ A MVC Node.js project for creating personality questionnaires that can be sent t
     - `<clientID>` => your google credentials "clientID"
 
 ## Running the project
-
     npm run start:dev
+
+   open: `http://localhost:3000/`
