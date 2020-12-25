@@ -43,4 +43,4 @@ A MVC Node.js project for creating personality questionnaires that can be sent t
 ## Running the project
     npm run start:dev
 
-   open: `http://localhost:3000/`
+Open http://localhost:3000 to view it in the browser.
